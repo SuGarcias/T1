@@ -13,4 +13,4 @@ La seva representació en mòdul i fase és:
 
 <img src="img/TF_ex1.png" width="480" align="center">
 
-Podem observar com obtenim un tò molt més agut
+Podem observar com obtenim un tò molt més agut.
