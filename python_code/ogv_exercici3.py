@@ -24,7 +24,7 @@ X=fft(x_r[0: Ls], N)
 k=np.arange(N)
 
 xdb = 20*np.log10(np.abs(X)/(max(np.abs(X))))
-fk =(k/N)*fm/2
+fk =(k/N)*fm    
 
 plt.figure(1)
 plt.plot(fk, xdb)
