@@ -7,7 +7,7 @@ from numpy.fft import fft
 print("importado correctamente...") 
 
 #LLEGIR :
-x_r, fm = sf.read('so_exercici2.wav')
+x_r, fm = sf.read('so_exercici1.wav')
 
 #Trobar freqüència del senyal:
 plt.figure(0)
