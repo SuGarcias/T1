@@ -6,36 +6,39 @@ from numpy.fft import fft
 
 print("importado correctamente...") 
 
-#LLEGIR 'so_exemple1.wav'
-
+#LLEGIR :
 x_r, fm = sf.read('so_exercici2.wav')
 
-plt.figure(2)
-magspec = plt.magnitude_spectrum(x_r, fm)
+#Trobar freqüència del senyal:
+plt.figure(0)
+plt.xlabel('Hz')
+magspec = plt.magnitude_spectrum(x_r, fm) 
 fx = magspec[1][np.argmax(magspec[0])] 
-print(fx)
+print(f'Freqüència fonamental del senyal: {fx} Hz')
 plt.show()
 
+###
 T= 2.5
 L = int(fm * T) 
 Tm=1/fm
 t=Tm*np.arange(L)  
-
 Tx=1/fx
 Ls=int(fm*5*Tx)
 sd.play(x_r, fm)
 
-plt.figure(0)
+#5 primers períodes:
+plt.figure(1)
 plt.plot(t[0:Ls], x_r[0:Ls])
 plt.xlabel('t en segons')
 plt.title('5 periodes de la sinusoide')
 plt.show()
 
-N=5000
+#Transformada:
+N=fm
 X=fft(x_r[0: Ls], N)
 k=np.arange(N)
 
-plt.figure(1)                         # Nova figura
+plt.figure(2)                         # Nova figura
 plt.subplot(211)                      # Espai per representar el mòdul
 plt.plot(k,abs(X))                    # Representació del mòdul de la transformada
 plt.title(f'Transformada del senyal de Ls={Ls} mostres amb DFT de N={N}')   # Etiqueta del títol

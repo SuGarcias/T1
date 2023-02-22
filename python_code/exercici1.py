@@ -45,7 +45,7 @@ plt.show()                                # Visualització de l'objecte gràfic.
 
 #DOMINI TRANSFROMAT: 
 from numpy.fft import fft     # Importem la funció fft
-N=5000                        # Dimensió de la transformada discreta
+N=fm                        # Dimensió de la transformada discreta
 X1=fft(x1[0 : Ls1], N)           # Càlcul de la transformada de 5 períodes de la sinusoide
 X2=fft(x2[0: Ls2], N)
 
