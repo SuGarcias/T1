@@ -4,7 +4,7 @@ import soundfile as sf
 import sounddevice as sd     
 from numpy.fft import fft
 
-x_r, fm = sf.read('so_exercici1.wav')
+x_r, fm = sf.read('so_exercici2.wav')
 
 plt.figure(0)
 plt.xlabel('Hz')
@@ -27,5 +27,5 @@ xdb = 20*np.log10(np.abs(X)/(max(np.abs(X))))
 fk =(k/N)*fm    
 
 plt.figure(1)
-plt.plot(fk, xdb)
+plt.plot(fk/2, xdb)
 plt.show()
