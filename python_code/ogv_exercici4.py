@@ -18,6 +18,7 @@ print(f'''
     - Nombre de mostres: {n_mostres}
     ''')
 
+
 T1 = 10                 #temps inici audio
 L1 = int(fm * T1) 
 T2 = 10.025             #25ms més endevant
@@ -53,6 +54,13 @@ plt.show()
 
 
 window = tkinter.Tk()
-L1 = ttk.Label(window, text = 'Cierra para dejar de escuchar la canción ', font='italic')
-L1.grid(column=0, row=1, padx=50, pady=50)
+def close():
+    window.quit()
+
+
+L1 = ttk.Label(window, text = 'Cierra para dejar de escuchar la canción ', font='comic_sans')
+L1.grid(column=0, row=1, padx=20, pady=20)
+
+exit = ttk.Button(window, text='Close', command=close)
+exit.grid(column=0, row=2, padx=15, pady=15)
 window.mainloop()
