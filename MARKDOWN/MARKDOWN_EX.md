@@ -78,3 +78,66 @@ També el mòdul i fase de la seva TF:
 
 Podem observar que les gràfiques dels 5 períodes i la representació en domini transformat és exactament igual que en l'exercici anterior, el qual generavem aquest to.
 Ara al llegir el fitxer i obtenir el 
+
+--- 
+### EXERCICI 3:
+En aquest exercici represento en dB el mòdul de la transformada llegida a través del fitxer .wav, en aquest cas he fet servir el ditxer ('so_exercici2.wav') que és el corresponent a un tò sinusoidal de frqüència 1500Hz.
+
+Primer, igual que a l'exercici anterior trobo la frqüència fonamental del fitxer d'audio:
+
+<img src="img/../../img/Freq_to_1500hz.png" width="480" align="center">
+
+Un cop tenim la frqüencia podem representar la transformada de forma en dB:
+
+<img src="img/../../img/TF_DB_1500.png" width="480" align="center">
+
+---
+
+### EXERCICI 4:
+
+En aquest exercici creo una variable anomenada 'audio' en la qual guardo el nom del fitxer d'audio a representar.
+
+En el meu cas he utilitzat el fitxer 'OASIS_dlb_mono.wav'.
+
+Primer de tot es mostra a la terminal el nom del fitxer, la freqüència de mostratge i el nombre total de mostres d'aquest.
+
+```python
+audio = 'OASIS_dlb_mono.wav'
+x_r, fm = sf.read(audio)
+n_mostres = len(x_r)
+print(f'''
+    Del Fitxer {audio}: 
+    - Freqüència de mostratge: {fm} Hz
+    - Nombre de mostres: {n_mostres}
+    ''')
+
+```
+Aleshores, per representar 25ms he escollit un moment de la cançó en la qual no hi hagi silenci, per tal de representar senyal. en el meu cas he representat des del segon 10 fins al 10.025:
+
+<img src="img/../../img/OASIS_5T.png" width="480" align="center">
+
+Seguidament represento en el domini trasnformat en dB:
+
+<img src="img/../../img/OASIS_TF.png" width="480" align="center">
+ 
+<br>
+
+A tot això, després de mostrar la frqüència de mostratge i el nombre de mostres, la canço comença a sonar.
+Un cop es tanca la gràfica de la TF apareix una finestra que he fet amb la llibreria tkinter´, que ens permet seguir escoltant la canço fins a apretar un botó que tanca la finestra i finalitza el programa, per tant deixa de sonar.
+Bàsicament la finestra serveix per mantenir obert el programa i poder seguir escoltant la canaçó.
+ 
+ 
+```python
+window = tkinter.Tk()
+def close():
+    window.quit()
+
+L1 = ttk.Label(window, text = 'Cierra para dejar de escuchar la canción ', font='comic_sans')
+L1.grid(column=0, row=1, padx=20, pady=20)
+
+exit = ttk.Button(window, text='Close', command=close)
+exit.grid(column=0, row=2, padx=15, pady=15)
+window.mainloop()
+```
+
+<img src="img/../../img/OASIS_tkinter.png" width="480" align="center">

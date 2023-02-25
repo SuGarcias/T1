@@ -36,7 +36,7 @@ N=fm
 X=fft(x_r[L1: L2], N)
 k=np.arange(N)
 
-xdb = abs(20*np.log10(np.abs(X)/(max(np.abs(X)))))
+xdb = 20*np.log10(np.abs(X)/(max(np.abs(X))))
 fk =(k/N)*fm    
 
 plt.figure(1)
