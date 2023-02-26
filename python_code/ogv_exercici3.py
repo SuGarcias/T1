@@ -23,9 +23,12 @@ N=fm
 X=fft(x_r[0: Ls], N)
 k=np.arange(N)
 
-xdb = 20*np.log10(np.abs(X)/(max(np.abs(X))))
+xdb = 20*(np.log10(np.abs(X)/(max(np.abs(X)))))
 fk =(k/N)*fm    
 
 plt.figure(1)
-plt.plot(fk/2, xdb)
+plt.plot(fk[0:int(fm/2)], xdb[0:int(fm/2)])
 plt.show()
+
+amplitud = 10**int(max(xdb)/20)
+print(f'Amplitud de la senyal a partir de la transformada: {amplitud}')

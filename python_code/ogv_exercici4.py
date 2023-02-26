@@ -41,7 +41,7 @@ fk =(k/N)*fm
 
 plt.figure(1)
 plt.subplot(211)
-plt.plot(fk/2, xdb)
+plt.plot(fk[0:int(fm/2)], xdb[0:int(fm/2)])
 plt.title(f'Transformada del senyal de Ls={L2-L1} mostres amb DFT de N={N}')   # Etiqueta del títol
 plt.ylabel('|X[k]|')                  # Etiqueta de mòdul
 plt.subplot(212)                      # Espai per representar la fase
